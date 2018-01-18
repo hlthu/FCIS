@@ -61,30 +61,22 @@ Any NVIDIA GPUs with at least 5GB memory should be OK, we use a single machine w
 	
 	**Note: The MXNet's Custom Op cannot execute parallelly using multi-gpus after this [PR](https://github.com/apache/incubator-mxnet/pull/6928). We strongly suggest the user rollback to version [MXNet@(commit 998378a)](https://github.com/dmlc/mxnet/tree/998378a) for training (following Section 3.2 - 3.6).**
 
-	3.1 Install MXNet and all dependencies by 
-	```
-	pip install -r requirements.txt
-	```
-	If there is no other error message, MXNet should be installed successfully. 
-	
-	***Build from source (alternative way)***
-
-	3.2 Clone MXNet and checkout to [MXNet@(commit 998378a)](https://github.com/dmlc/mxnet/tree/998378a) by
+	3.1 Clone MXNet and checkout to [MXNet@(commit 998378a)](https://github.com/dmlc/mxnet/tree/998378a) by
 	```
 	git clone --recursive https://github.com/dmlc/mxnet.git
 	git checkout 998378a
 	git submodule update
 	```
-	3.3 Copy channel operators in `$(FCIS_ROOT)/fcis/operator_cxx` to `$(YOUR_MXNET_FOLDER)/src/operator/contrib` by
+	3.2 Copy channel operators in `$(FCIS_ROOT)/fcis/operator_cxx` to `$(YOUR_MXNET_FOLDER)/src/operator/contrib` by
 	```
 	cp -r $(FCIS_ROOT)/fcis/operator_cxx/channel_operator* $(MXNET_ROOT)/src/operator/contrib/
     ```
-	3.4 Compile MXNet
+	3.3 Compile MXNet
 	```
 	cd ${MXNET_ROOT}
 	make -j $(nproc) USE_OPENCV=1 USE_BLAS=openblas USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda USE_CUDNN=1
 	```
-	3.5 Install the MXNet Python binding by
+	3.4 Install the MXNet Python binding by
 	
 	```
 	cd $(YOUR_MXNET_FOLDER)/python
