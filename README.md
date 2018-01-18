@@ -152,17 +152,6 @@ python experiments/fcis/fcis_end2end_test.py --cfg experiments/fcis/cfgs/resnet_
 
 	And add a line of `plt.savefig(im_name, dvi=5000)` to save it to a image, where `im_name` is the name of saved image.
 
-## Usage
-
-1. All of our experiment settings (GPU #, dataset, etc.) are kept in yaml config files at folder `./experiments/fcis/cfgs`.
-2. Two config files have been provided so far: FCIS@COCO with OHEM and FCIS@VOC without OHEM. We use 8 and 4 GPUs to train models on COCO and on VOC, respectively.
-3. To perform experiments, run the python scripts with the corresponding config file as input. For example, to train and test FCIS on COCO with ResNet-v1-101, use the following command
-    ```
-    python experiments/fcis/fcis_end2end_train_test.py --cfg experiments/fcis/cfgs/resnet_v1_101_coco_fcis_end2end_ohem.yaml
-    ```
-    A cache folder would be created automatically to save the model and the log under `output/fcis/coco/` or `output/fcis/voc/`.
-4. Please find more details in config files and in our code.
-
 ## Citing FCIS
 
 If you find FCIS useful in your research, please consider citing:
