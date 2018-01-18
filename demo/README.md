@@ -1,0 +1,1 @@
+The demo images are provided in `ROOT_DIR/results/original/`
