@@ -65,6 +65,7 @@ Any NVIDIA GPUs with at least 5GB memory should be OK, we use a single machine w
 	```
 	git clone --recursive https://github.com/dmlc/mxnet.git
 	git checkout 998378a
+	git submodule init
 	git submodule update
 	```
 	3.2 Copy channel operators in `$(FCIS_ROOT)/fcis/operator_cxx` to `$(YOUR_MXNET_FOLDER)/src/operator/contrib` by
@@ -160,3 +161,15 @@ If you find FCIS useful in your research, please consider citing:
 ## License
 
 © Microsoft, 2017. Licensed under an Apache-2.0 license.
+
+## Citing FCIS
+
+If you find FCIS useful in your research, please consider citing:
+```
+@inproceedings{li2016fully,
+  Author = {Yi Li, Haozhi Qi, Jifeng Dai, Xiangyang Ji and Yichen Wei}
+  Title = {Fully Convolutional Instance-aware Semantic Segmentation},
+  Conference = {CVPR},
+  year = {2017}
+}
+```
